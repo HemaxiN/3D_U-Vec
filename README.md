@@ -2,7 +2,7 @@
 
 ![](https://github.com/HemaxiN/3D_U-Vec/blob/main/images/overview_3duvec.png)
 
-This repository contains the Python implementation of 3D U-Vec a Deep Learning model to predict nucleus-Golgi vectors in 3D microscopy images of mouse retinas, as described in: 
+This repository contains the Python implementation of the 3D U-Vec, a Deep Learning model to predict nucleus-Golgi vectors in 3D microscopy images of mouse retinas, as described in: 
 
 - Hemaxi Narotamo, Marie Ouarné, Cláudio Franco, Margarida Silveira, 3D deep learning model to predict nucleus-Golgi vectors in 3D microscopy images of mouse retinas.
 
