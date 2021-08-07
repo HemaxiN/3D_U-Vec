@@ -1,4 +1,4 @@
-# 3D U-Vec - Nucleus-Golgi Vector Prediction in 3D Microscopy Images
+# 3D U-Vec: Nucleus-Golgi Vector Prediction in 3D Microscopy Images
 
 ![](https://github.com/HemaxiN/3D_U-Vec/blob/main/images/overview_3duvec.png)
 
