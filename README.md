@@ -19,13 +19,13 @@ This code developed in Python 3.6.
 
 ## How to cite
 ```bibtex
-@inproceedings{narotamo2019segmentation,
-  title={Segmentation of cell nuclei in fluorescence microscopy images using deep learning},
-  author={Narotamo, Hemaxi and Sanches, J Miguel and Silveira, Margarida},
-  booktitle={Iberian Conference on Pattern Recognition and Image Analysis},
+@inproceedings{narotamo20223duvec,
+  title={3D U-Vec: Prediction of Nucleus-Golgi Vectors in 3D Microscopy Images},
+  author={Narotamo, Hemaxi and Ouarné, Marie and Franco, Cláudio and Silveira, Margarida},
+  booktitle={IEEE Transactions on Biomedical Engineering},
   pages={53--64},
-  year={2019},
-  organization={Springer}
+  year={2022},
+  organization={IEEE}
 }
 ```
 
