@@ -12,9 +12,9 @@ If you are using this code in your research please [cite the paper](#how-to-cite
 ## Overview
 
 
-## Installation
+## Requirements
 
-This code developed in Python 3.6.
+Python 3.6, Tensorflow-GPU 1.9.0, Keras 2.2.4 and other packages listed in `requirements.txt`.
 
 
 ## How to cite
