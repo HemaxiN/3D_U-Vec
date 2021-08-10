@@ -8,6 +8,9 @@ This repository contains the Python implementation of the 3D U-Vec, a Deep Learn
 
 If you are using this code in your research please [cite the paper](#how-to-cite).
 
+## Architecture
+
+![](https://github.com/HemaxiN/3D_U-Vec/blob/main/images/overviewa.png)
 
 ## Overview
 
