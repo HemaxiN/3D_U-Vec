@@ -11,6 +11,8 @@ If you are using this code in your research please [cite the paper](#how-to-cite
 
 ## Overview
 
+3D U-Vec predicts, for each voxel belonging to the centroid of the nucleus, the $\left ( x,y,z \right )$ components of the corresponding polarity vector. More specifically, it receives as input a 3D patch (X,Y,Z,2), where the first and the second channels correspond to the red and green channels of the original microscopy images, respectively; and outputs a (X,Y,Z,3) tensor. Each non-zero component in the output represents the \textit{x}, \textit{y} and \textit{z} components of each of the detected nucleus-Golgi pairs, located approximately at the centroid of the corresponding nucleus.
+
 ![](https://github.com/HemaxiN/3D_U-Vec/blob/main/images/overview.png)
 
 ## Requirements
