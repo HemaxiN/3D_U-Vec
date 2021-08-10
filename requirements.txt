@@ -1,0 +1,6 @@
+numpy
+keras==2.2.4
+tensorflow-gpu==1.9.0
+gputools
+batchgenerators
+scipy
