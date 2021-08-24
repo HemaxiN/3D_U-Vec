@@ -15,8 +15,9 @@ save_dir_vec = '/dev/shm/3dvectors/'
 _sizee = 256
 _zsize = 64
 
-npatches = 109 #number of patches in "imgs_dir"
+
 maxpatches = 2000 #number of augmented patches
+npatches = len(os.listdir(imgs_dir)) #number of patches in "imgs_dir"
 
 k=0
 ii=0
