@@ -456,3 +456,7 @@ def draw_vecs(img_dir, image_nb, save_dir, nuclei_centroids_pred, vector_directi
     image = image[0:aux_sizes_or[0], 0:aux_sizes_or[1],:,:]
 
     imwrite(os.path.join(save_dir, image_nb), image, photometric='rgb')
+
+    np.save(os.path.join(save_dir, 'nuclei_centroids' + image_nb.replace('.tif', '.npy')), nuclei_centroids_pred)
+    np.save(os.path.join(save_dir, 'golgi_centroids' + image_nb.replace('.tif', '.npy')), golgi_centroids_pred)
+    np.save(os.path.join(save_dir, 'vector_directions' + image_nb.replace('.tif', '.npy')), vector_directions_pred)
