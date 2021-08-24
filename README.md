@@ -59,7 +59,16 @@ Run the file `train_main.py` to train de model.
 
 ## Testing
 
+Change the `model_path`, `save_dir`, `img_dir`, `_patch_size`, `_z_size`, `_step` parameters in file `test_main.py`, where:
 
+* model_path: path to the trained model.
+* save_dir: directory to save the images with the predicted vectors (as .tif files) and the predicted vectors (as .npy arrays).
+* img_dir: directory with the test images (saved as RGB .tif files).
+* _patch_size: patch size along x and y directions
+* _z_size: patch size along z direction
+* _step: overlap along x and y directions between consecutive patches extracted from the image
+
+Run the file `test_main.py`.
 
 
 ## How to cite
