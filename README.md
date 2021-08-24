@@ -26,7 +26,7 @@ Python 3.6, Tensorflow-GPU 1.9.0, Keras 2.2.4 and other packages listed in `requ
 
 ## Training on your own dataset
 
-Change the `imgs_dir`, `vecs_dir`, `save_dir_img`, `save_dir_vec`, `_sizee` and `_zsize` parameters in file `create_dataset_main.py`, where:
+Change the `imgs_dir`, `vecs_dir`, `save_dir_img`, `save_dir_vec`, `_sizee`, `_zsize` and `maxpatches` parameters in file `create_dataset_main.py`, where:
 
 *  `imgs_dir`: directory containing the RGB image patches (X,Y,Z,3), saved as .tif files.
 *  `vecs_dir`: directory containing the corresponding np arrays, of size Nx6, where N is the number of vectors in the corresponding patch. The first three components are the (x,y,z) positions of the nucleus centroid, and the last three components (vx,vy,vz) the components of the nucleus-Golgi vector.
@@ -34,11 +34,12 @@ Change the `imgs_dir`, `vecs_dir`, `save_dir_img`, `save_dir_vec`, `_sizee` and 
 *  `save_dir_vec`: directory where the corresponding vectors are saved.
 *  `_sizee`: size of the microscopy image patch along x and y directions.
 *  `_zsize`: size of the microscopy image patch along the z direction.  
+*  `maxpatches`: number of augmented patches.
 
 Run the file `create_dataset_main.py` to create the training/validation dataset. The dataset obtained with this code should have the following tree structure:
 
 ```
-train_val_ds
+train_val_dataset
 ├── train
 │   ├── images
 │   └── masks
@@ -47,7 +48,7 @@ train_val_ds
     └── masks
 ```
 
-Thereafter, change the `_size`,`_z_size`,`data_dir`,`save_dir` and other parameters in file `train_main.py`, where
+Thereafter, change the `_size`,`_z_size`,`data_dir`,`save_dir` and other training parameters in file `train_main.py`, where
 
 * `_size`: size of the microscopy image patch along x and y directions.
 * `_s_size`: size of the microscopy image patch along the z direction.
