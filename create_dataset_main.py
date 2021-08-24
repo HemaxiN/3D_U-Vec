@@ -16,10 +16,11 @@ _sizee = 256
 _zsize = 64
 
 npatches = 109 #number of patches in "imgs_dir"
+maxpatches = 2000 #number of augmented patches
 
 k=0
 ii=0
-while k<2000:
+while k<maxpatches:
 
     final_img = np.zeros((_sizee,_sizee,_zsize,2))
     if ii==npatches:
