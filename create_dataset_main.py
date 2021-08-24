@@ -9,8 +9,8 @@ vecs_dir = '/mnt/2TBData/hemaxi/3dvectors/dataset3d/256_rc/train/gt' #np array, 
                                                                      #centroid) and (vx, vy, vz) are the components 
                                                                      #of the nucleus-Golgi vector
 
-save_dir_img = '/dev/shm/3dvectors/'
-save_dir_vec = '/dev/shm/3dvectors/'
+save_dir_img = '/dev/shm/3dvectors/train/images'
+save_dir_vec = '/dev/shm/3dvectors/train/masks'
 
 _sizee = 256
 _zsize = 64
