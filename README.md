@@ -64,7 +64,7 @@ Run the file `train_main.py` to train de model.
 
 ## How to cite
 ```bibtex
-@inproceedings{narotamo20223duvec,
+@article{narotamo20223duvec,
   title={3D U-Vec: Prediction of Nucleus-Golgi Vectors in 3D Microscopy Images},
   author={Narotamo, Hemaxi and Ouarné, Marie and Franco, Cláudio and Silveira, Margarida},
   booktitle={IEEE Transactions on Biomedical Engineering},
