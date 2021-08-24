@@ -2,8 +2,8 @@ from test_utils import *
 from tifffile import imread, imwrite
 import os
 
-model_path = r'' # trained model path 
-save_dir = r'' # directory to save the images with the predicted vectors
+model_path = r'/content/drive/My Drive/3dvectors/models/model20.hdf5' # trained model path 
+save_dir = r'/content/drive/My Drive/3dvectors/results' # directory to save the images with the predicted vectors
 img_dir = r'/content/drive/My Drive/3dvectors/original_images' # directory with the test images (saved as RGB .tif files)
 
 # test parameters
