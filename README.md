@@ -22,7 +22,7 @@ Our approach uses a 3D U-Net as a neural network backbone to predict the 3D vect
 
 ## Requirements
 
-Python 3.6, Tensorflow-GPU 1.9.0, Keras 2.2.4 and other packages listed in `requirements.txt`.
+Python 3.5.2, Tensorflow-GPU 1.9.0, Keras 2.2.4 and other packages listed in `requirements.txt`.
 
 ## Training on your own dataset
 
