@@ -57,11 +57,11 @@ def mean_se(y_true, y_pred):
     epe_loss_channelz = epe_loss(vecz, veczgt)
     return 0.33*epe_loss_channelx + 0.33*epe_loss_channely + 0.33*epe_loss_channelz
 
-def epe_loss(y_true, y_pred, weight):
+def epe_loss(y_true, y_pred, weight=None):
         output = mse(y_true, y_pred, sample_weight = None)
         return output
 
-def epe_loss1(y_true, y_pred, weight):
+def epe_loss1(y_true, y_pred, weight=None):
         output = mse(y_true, y_pred, sample_weight = weight)
         return output
 
