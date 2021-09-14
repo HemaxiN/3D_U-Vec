@@ -366,7 +366,7 @@ def test_3duvec(model_path, img_dir, _patch_size, _z_size, _step, _threshold, _s
                         vz = pred_patch[v[0],v[1],v[2],2] 
 
 
-                        if v[0]>0+20 and v[1]>0+20 and v[0]<128-20 and v[1]<128-20:
+                        if v[0]>0+20 and v[1]>0+20 and v[0]<sizeee-20 and v[1]<sizeee-20:
                         #if True:
 
                           if np.abs(vx)>=3.5 or np.abs(vy)>=3.5:
