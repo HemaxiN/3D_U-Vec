@@ -42,10 +42,10 @@ Run the file `create_dataset_main.py` to create the training/validation dataset.
 train_val_dataset
 ├── train
 │   ├── images
-│   └── masks
+│   └── outputs
 └── val
     ├── images
-    └── masks
+    └── outputs
 ```
 
 Thereafter, change the `_size`,`_z_size`,`data_dir`,`save_dir` and other training parameters in file `train_main.py`, where
