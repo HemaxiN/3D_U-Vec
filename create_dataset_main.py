@@ -10,13 +10,13 @@ vecs_dir = '/mnt/2TBData/hemaxi/3dvectors/dataset3d/256_rc/train/gt' #np array, 
                                                                      #of the nucleus-Golgi vector
 
 save_dir_img = '/dev/shm/3dvectors/train/images'
-save_dir_vec = '/dev/shm/3dvectors/train/masks'
+save_dir_vec = '/dev/shm/3dvectors/train/outputs'
 
 _sizee = 256
 _zsize = 64
 
 
-maxpatches = 2000 #number of augmented patches
+maxpatches = 500 #number of augmented patches
 npatches = len(os.listdir(imgs_dir)) #number of patches in "imgs_dir"
 
 k=0
@@ -44,7 +44,7 @@ while k<maxpatches:
         angle = np.random.choice(np.arange(0,360,90))
         img_aux, msk_aux = rotation(img_aux, msk_aux, angle)
 
-    final_img[0:_sizee,0:_sizee,0:size_z_dir,:] = img_aux[:,:,0:size_z_dir,0:2]
+    final_img[0:_sizee,0:_sizee,0:np.shape(img_aux)[2],:] = img_aux[:,:,:,0:2]
     final_vectors = msk_aux
       
     np.save(os.path.join(save_dir_vec, str(k) + '.npy'), final_vectors)

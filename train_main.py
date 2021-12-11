@@ -1,10 +1,10 @@
 import os
-from 3DUVec_utils import *
+from threeDUVec_utils import *
 
 _size = 256
 _z_size = 64
 data_dir = '/dev/shm/3dvectors/' #directory with the folders "train/images"
-                                 #"train/masks", "val/images", "val/masks"
+                                 #"train/outputs", "val/images", "val/outputs"
 save_dir = '/mnt/2TBData/hemaxi/3dvectors/working_colab' #directory to save
                                                          #the models and the log file
 
@@ -26,15 +26,14 @@ training_configs = {
                 'learning_rate_patience':50,
                 'learning_rate_epochs':50, 
                 'early_stopping_patience':None,
-                'n_epochs':200,
-                }
+                'n_epochs':200,}
 
 # Generators
-train_generator = DataGenerator(partition='train', configs=data_train_configs, data_dir, data_aug_dict=None) 
-validation_generator = DataGenerator(partition='val', configs=data_val_test_configs, data_dir, data_aug_dict=None)
-test_generator = DataGenerator(partition='val', configs=data_val_test_configs, data_dir, data_aug_dict=None)
+train_generator = DataGenerator(data_dir, partition='train', configs=data_train_configs, data_aug_dict=None) 
+validation_generator = DataGenerator(data_dir, partition='val', configs=data_val_test_configs, data_aug_dict=None)
+test_generator = DataGenerator(data_dir, partition='val', configs=data_val_test_configs, data_aug_dict=None)
 
-model = 3DUVec() #training from scratch
+model = threeDUVec() #training from scratch
 #model = load_old_model(os.path.join(save_dir,'final_vectors.hdf5') #training from pre-trained model
 
 train_model(model=model, logging_file= os.path.join(save_dir, "vectors.log"),
@@ -43,4 +42,4 @@ train_model(model=model, logging_file= os.path.join(save_dir, "vectors.log"),
                         steps_per_epoch=train_generator.__len__(),
                         validation_steps=validation_generator.__len__(), **training_configs)
 
-model.save(os.path.join(save_dir,'final_vectors.hdf5')
+model.save(os.path.join(save_dir,'final_vectors.hdf5'))
