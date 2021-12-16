@@ -76,10 +76,10 @@ Run the file `test_main.py`.
 @article{narotamo20223duvec,
   title={3D U-Vec: Prediction of Nucleus-Golgi Vectors in 3D Microscopy Images},
   author={Narotamo, Hemaxi and Ouarné, Marie and Franco, Cláudio and Silveira, Margarida},
-  booktitle={IEEE Transactions on Biomedical Engineering},
-  pages={53--64},
-  year={2022},
-  organization={IEEE}
+  booktitle={},
+  pages={},
+  year={},
+  organization={}
 }
 ```
 
