@@ -394,19 +394,19 @@ def test_3duvec(model_path, img_dir, _patch_size, _z_size, _step, _threshold, _s
 
     
     nuclei_centroids_pred, vector_directions_pred, golgi_centroids_pred = nonmaxsuppresion(nuclei_centroids, vecs_pred, golgi_centroids, _threshold, _size)
-    draw_vecs(img_dir, image_nb, save_dir, nuclei_centroids_pred, vector_directions_pred, golgi_centroids_pred)
+    draw_vecs(img_dir, image_nb, save_dir, nuclei_centroids_pred, vector_directions_pred, golgi_centroids_pred, _patch_size)
 
 
 
 
-def draw_vecs(img_dir, image_nb, save_dir, nuclei_centroids_pred, vector_directions_pred, golgi_centroids_pred):
+def draw_vecs(img_dir, image_nb, save_dir, nuclei_centroids_pred, vector_directions_pred, golgi_centroids_pred, _patch_size):
 
     image = imread(os.path.join(img_dir, image_nb))
 
     #image size
     size_y = np.shape(image)[0]
     size_x = np.shape(image)[1]
-    auz_sizes_or = [size_y, size_x]
+    aux_sizes_or = [size_y, size_x]
 
     #patch size
     new_size_y = int((size_y/_patch_size) + 1) * _patch_size
@@ -449,7 +449,7 @@ def draw_vecs(img_dir, image_nb, save_dir, nuclei_centroids_pred, vector_directi
         for k in range(0, len(ListOfPoints)):
             coordinates = ListOfPoints[k]
             if (coordinates[0]<image.shape[0] and coordinates[1]<image.shape[1] and coordinates[2]<56):
-                image[coordinates[0], coordinates[1], coordinates[2], 2] = 1
+                image[coordinates[0], coordinates[1], coordinates[2], :] = 1
 
     image = image*255.0
     image = image.astype('uint8')
