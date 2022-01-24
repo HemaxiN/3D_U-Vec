@@ -307,6 +307,8 @@ def test_3duvec(model_path, img_dir, _patch_size, _z_size, _step, _threshold, _s
     for image_nb in os.listdir(img_dir):
 
         image = imread(os.path.join(img_dir, image_nb))
+        #image = image[:,:,0:64,:]
+        print(image.shape)
 
         #image size
         size_y = np.shape(image)[0]
@@ -392,7 +394,10 @@ def test_3duvec(model_path, img_dir, _patch_size, _z_size, _step, _threshold, _s
                 j = j+_step       
             i = i+_step
 
-    
+    np.save(os.path.join(save_dir, 'nuclei_centroids_beforenms' + image_nb.replace('.tif', '.npy')), nuclei_centroids)
+    np.save(os.path.join(save_dir, 'golgi_centroids_beforenms' + image_nb.replace('.tif', '.npy')), golgi_centroids)
+    np.save(os.path.join(save_dir, 'vector_directions_beforenms' + image_nb.replace('.tif', '.npy')), vecs_pred)   
+ 
     nuclei_centroids_pred, vector_directions_pred, golgi_centroids_pred = nonmaxsuppresion(nuclei_centroids, vecs_pred, golgi_centroids, _threshold, _size)
     draw_vecs(img_dir, image_nb, save_dir, nuclei_centroids_pred, vector_directions_pred, golgi_centroids_pred, _patch_size)
 
@@ -448,7 +453,7 @@ def draw_vecs(img_dir, image_nb, save_dir, nuclei_centroids_pred, vector_directi
         
         for k in range(0, len(ListOfPoints)):
             coordinates = ListOfPoints[k]
-            if (coordinates[0]<image.shape[0] and coordinates[1]<image.shape[1] and coordinates[2]<56):
+            if (coordinates[0]<image.shape[0] and coordinates[1]<image.shape[1] and coordinates[2]<64):
                 image[coordinates[0], coordinates[1], coordinates[2], :] = 1
 
     image = image*255.0
