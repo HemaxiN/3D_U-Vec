@@ -389,12 +389,12 @@ def test_3duvec(model_path, img_dir, _patch_size, _z_size, _step, _threshold, _s
                 j = j+_step       
             i = i+_step
 
-    np.save(os.path.join(save_dir, 'nuclei_centroids_beforenms' + image_nb.replace('.tif', '.npy')), nuclei_centroids)
-    np.save(os.path.join(save_dir, 'golgi_centroids_beforenms' + image_nb.replace('.tif', '.npy')), golgi_centroids)
-    np.save(os.path.join(save_dir, 'vector_directions_beforenms' + image_nb.replace('.tif', '.npy')), vecs_pred)   
- 
-    nuclei_centroids_pred, vector_directions_pred, golgi_centroids_pred = nonmaxsuppresion(nuclei_centroids, vecs_pred, golgi_centroids, _threshold, _size)
-    draw_vecs(img_dir, image_nb, save_dir, nuclei_centroids_pred, vector_directions_pred, golgi_centroids_pred, _patch_size)
+        np.save(os.path.join(save_dir, 'nuclei_centroids_beforenms' + image_nb.replace('.tif', '.npy')), nuclei_centroids)
+        np.save(os.path.join(save_dir, 'golgi_centroids_beforenms' + image_nb.replace('.tif', '.npy')), golgi_centroids)
+        np.save(os.path.join(save_dir, 'vector_directions_beforenms' + image_nb.replace('.tif', '.npy')), vecs_pred)   
+     
+        nuclei_centroids_pred, vector_directions_pred, golgi_centroids_pred = nonmaxsuppresion(nuclei_centroids, vecs_pred, golgi_centroids, _threshold, _size)
+        draw_vecs(img_dir, image_nb, save_dir, nuclei_centroids_pred, vector_directions_pred, golgi_centroids_pred, _patch_size)
 
 
 
