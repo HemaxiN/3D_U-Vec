@@ -307,7 +307,6 @@ def test_3duvec(model_path, img_dir, _patch_size, _z_size, _step, _threshold, _s
     for image_nb in os.listdir(img_dir):
 
         image = imread(os.path.join(img_dir, image_nb))
-        #image = image[:,:,0:64,:]
         print(image.shape)
 
         #image size
@@ -337,15 +336,11 @@ def test_3duvec(model_path, img_dir, _patch_size, _z_size, _step, _threshold, _s
             j = 0
             while j+_patch_size <= image.shape[1]:
 
-                _slice = image[i:i+_patch_size, j:j+_patch_size, :,:]
+                _slice = image[i:i+_patch_size, j:j+_patch_size, :,0:2]
         
                 _slice = _slice/255.0
-                images_train = _slice
-
-                images_train_aux = np.zeros((np.shape(images_train)[0], np.shape(images_train)[1], _z_size, 2))
                 
-
-                tstimage = np.expand_dims(images_train_aux, axis=0)
+                tstimage = np.expand_dims(_slice, axis=0)
                 preds_test = model.predict(tstimage)
                 pred_patch = preds_test[0,:,:,:,:]
 
@@ -368,7 +363,7 @@ def test_3duvec(model_path, img_dir, _patch_size, _z_size, _step, _threshold, _s
                         vz = pred_patch[v[0],v[1],v[2],2] 
 
 
-                        if v[0]>0+20 and v[1]>0+20 and v[0]<sizeee-20 and v[1]<sizeee-20:
+                        if v[0]>0+20 and v[1]>0+20 and v[0]<_patch_size-20 and v[1]<_patch_size-20:
                         #if True:
 
                           if np.abs(vx)>=3.5 or np.abs(vy)>=3.5:
