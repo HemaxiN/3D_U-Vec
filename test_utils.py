@@ -60,7 +60,7 @@ def mean_se(y_true, y_pred):
     epe_loss_channelz = epe_loss(vecz, veczgt)
     return 0.33*epe_loss_channelx + 0.33*epe_loss_channely + 0.33*epe_loss_channelz
 
-def epe_loss(y_true, y_pred, weight):
+def epe_loss(y_true, y_pred):
         output = mse(y_true, y_pred, sample_weight = None)
         return output
 
@@ -311,7 +311,7 @@ def test_3duvec(model_path, img_dir, _patch_size, _z_size, _step, _threshold, _s
         #image size
         size_y = np.shape(image)[0]
         size_x = np.shape(image)[1]
-        auz_sizes_or = [size_y, size_x]
+        aux_sizes_or = [size_y, size_x]
 
         #patch size
         new_size_y = int((size_y/_patch_size) + 1) * _patch_size
