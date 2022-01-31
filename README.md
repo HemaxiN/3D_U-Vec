@@ -70,6 +70,10 @@ Change the `model_path`, `save_dir`, `img_dir`, `_patch_size`, `_z_size`, `_step
 
 Run the file `test_main.py`.
 
+## Dataset
+
+The dataset used in our experiments is made publicly available [here](https://drive.google.com/drive/folders/1ijSZC4oaxjXHVC5vQKpPcOhZLETHiyK-?usp=sharing).
+
 
 ## How to cite
 ```bibtex
