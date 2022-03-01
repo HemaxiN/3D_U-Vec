@@ -1,4 +1,4 @@
-# 3D U-Vec: Prediction of Nucleus-Golgi Vectors in 3D Microscopy Images
+# 3D U-Vec: A Deep Learning Based Approach for the Prediction of Nucleus-Golgi Vectors in 3D Microscopy Images
 
 
 
@@ -78,7 +78,7 @@ The dataset used in our experiments is made publicly available [here](https://dr
 ## How to cite
 ```bibtex
 @article{narotamo20223duvec,
-  title={3D U-Vec: Prediction of Nucleus-Golgi Vectors in 3D Microscopy Images},
+  title={3D U-Vec: A Deep Learning Based Approach for the Prediction of Nucleus-Golgi Vectors in 3D Microscopy Images},
   author={Narotamo, Hemaxi and Ouarné, Marie and Franco, Cláudio and Silveira, Margarida},
   booktitle={},
   pages={},
