@@ -72,7 +72,7 @@ Run the file `test_main.py`.
 
 ## Dataset
 
-The dataset used in our experiments is made publicly available [here](https://drive.google.com/drive/folders/1ijSZC4oaxjXHVC5vQKpPcOhZLETHiyK-?usp=sharing).
+The dataset used in our experiments is made publicly available [here](https://drive.google.com/file/d/17I0U-fyVEA-fsbtyZO3oUBTiCyjvOY4h/view?usp=sharing).
 
 
 ## How to cite
