@@ -72,7 +72,7 @@ Run the file `test_main.py`.
 
 ## Dataset
 
-The dataset used in our experiments is made publicly available [here](https://huggingface.co/datasets/Hemaxi/3DU-Vec/tree/main/Images).
+The dataset used in our experiments is made publicly available [here](https://huggingface.co/datasets/Hemaxi/3DU-Vec/tree/main).
 
 
 ## How to cite
