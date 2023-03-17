@@ -12,8 +12,8 @@ vecs_dir = '/mnt/2TBData/hemaxi/3dvectors/dataset3d/256_rc/train/gt' #np array, 
 save_dir_img = '/dev/shm/3dvectors/train/images'
 save_dir_vec = '/dev/shm/3dvectors/train/outputs'
 
-_sizee = 256
-_zsize = 64
+_xysize = 256 #size of the patch along x and y axes
+_zsize = 64 #size of the patch along the z axis
 
 
 maxpatches = 500 #number of augmented patches
@@ -23,7 +23,7 @@ k=0
 ii=0
 while k<maxpatches:
 
-    final_img = np.zeros((_sizee,_sizee,_zsize,2))
+    final_img = np.zeros((_xysize,_xysize,_zsize,2))
     if ii==npatches:
         ii = 0
 
@@ -44,7 +44,7 @@ while k<maxpatches:
         angle = np.random.choice(np.arange(0,360,90))
         img_aux, msk_aux = rotation(img_aux, msk_aux, angle)
 
-    final_img[0:_sizee,0:_sizee,0:np.shape(img_aux)[2],:] = img_aux[:,:,:,0:2]
+    final_img[0:_xysize,0:_xysize,0:np.shape(img_aux)[2],:] = img_aux[:,:,:,0:2]
     final_vectors = msk_aux
       
     np.save(os.path.join(save_dir_vec, str(k) + '.npy'), final_vectors)
