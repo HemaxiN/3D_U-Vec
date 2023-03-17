@@ -26,13 +26,13 @@ Python 3.5.2, Tensorflow-GPU 1.9.0, Keras 2.2.4 and other packages listed in `re
 
 ## Training on your own dataset
 
-Change the `imgs_dir`, `vecs_dir`, `save_dir_img`, `save_dir_vec`, `_sizee`, `_zsize` and `maxpatches` parameters in file `create_dataset_main.py`, where:
+Change the `imgs_dir`, `vecs_dir`, `save_dir_img`, `save_dir_vec`, `_xysize`, `_zsize` and `maxpatches` parameters in file `create_dataset_main.py`, where:
 
 *  `imgs_dir`: directory containing the RGB image patches (X,Y,Z,3), saved as .tif files.
 *  `vecs_dir`: directory containing the corresponding np arrays, of size Nx6, where N is the number of vectors in the corresponding patch. The first three components are the (x,y,z) positions of the nucleus centroid, and the last three components (vx,vy,vz) the components of the nucleus-Golgi vector.
 *  `save_dir_img`: directory where the processed images will be saved (after performing data augmentation as described in the paper).
 *  `save_dir_vec`: directory where the corresponding vectors are saved.
-*  `_sizee`: size of the microscopy image patch along x and y directions.
+*  `_xysize`: size of the microscopy image patch along x and y directions.
 *  `_zsize`: size of the microscopy image patch along the z direction.  
 *  `maxpatches`: number of augmented patches.
 
