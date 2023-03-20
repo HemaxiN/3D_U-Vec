@@ -78,8 +78,7 @@ def weighted_joint_loss_function(y_true, y_pred):
     mse_vectorsx = epe_loss1(vecxgt, vecx, weight1)
     mse_vectorsy = epe_loss1(vecygt, vecy, weight1)
     mse_vectorsz = epe_loss1(veczgt, vecz, weight1)
-    return 0.33*mse_vectorsx + 0.33*mse_vectorsy + 0.33*mse_vectorsz + (1e-11)*(K.sum(K.abs(vecx))+K.sum(K.abs(vecy))+K.sum(K.abs(vecz)))
-
+    return 0.33*mse_vectorsx + 0.33*mse_vectorsy + 0.33*mse_vectorsz
 
 def threeDUVec(n_classes=3, im_sz=256, depth=64, n_channels=2, n_filters_start=8, growth_factor=2, upconv=True):
         droprate=0.10
