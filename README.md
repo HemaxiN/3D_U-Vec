@@ -28,11 +28,11 @@ Python 3.5.2, Tensorflow-GPU 1.9.0, Keras 2.2.4 and other packages listed in [re
 
 Change the `imgs_dir`, `vecs_dir`, `save_dir_img`, `save_dir_vec`, `_xysize`, `_zsize` and `maxpatches` parameters in file [create_dataset_main.py](https://github.com/HemaxiN/3D_U-Vec/blob/main/create_dataset_main.py), where:
 
-*  `imgs_dir`: directory containing the RGB image patches (X,Y,Z,3), saved as .tif files.
-*  `vecs_dir`: directory containing the corresponding np arrays, of size Nx6, where N is the number of vectors in the corresponding patch. The first three components are the (x,y,z) positions of the nucleus centroid, and the last three components (vx,vy,vz) the components of the nucleus-Golgi vector.
-*  `save_dir_img`: directory where the processed images will be saved (after performing data augmentation as described in the paper).
-*  `save_dir_vec`: directory where the corresponding vectors are saved.
-*  `_xysize`: size of the microscopy image patch along x and y directions.
+*  `imgs_dir`: directory containing the RGB image patches (X,Y,Z,3), saved as .tif files;
+*  `vecs_dir`: directory containing the corresponding np arrays, of size Nx6, where N is the number of vectors in the corresponding patch. The first three components are the (x,y,z) positions of the nucleus centroid, and the last three components (vx,vy,vz) the components of the nucleus-Golgi vector;
+*  `save_dir_img`: directory where the processed images will be saved (after performing data augmentation as described in the paper);
+*  `save_dir_vec`: directory where the corresponding vectors are saved;
+*  `_xysize`: size of the microscopy image patch along x and y directions;
 *  `_zsize`: size of the microscopy image patch along the z direction (pre-process the image: perform zero-padding if the number of slices is smaller than 64)
 *  `maxpatches`: number of augmented patches.
 
@@ -50,9 +50,9 @@ train_val_dataset
 
 Thereafter, change the `_size`,`_z_size`,`data_dir`,`save_dir` and other training parameters in file [train_main.py](https://github.com/HemaxiN/3D_U-Vec/blob/main/train_main.py), where
 
-* `_size`: size of the microscopy image patch along x and y directions.
-* `_s_size`: size of the microscopy image patch along the z direction.
-* `data_dir`: directory with the structure depicted above.
+* `_size`: size of the microscopy image patch along x and y directions;
+* `_s_size`: size of the microscopy image patch along the z direction;
+* `data_dir`: directory with the structure depicted above;
 * `save_dir`: directory where the models and the log file will be saved.
 
 Run the file [train_main.py](https://github.com/HemaxiN/3D_U-Vec/blob/main/train_main.py) to train de model.
@@ -61,12 +61,12 @@ Run the file [train_main.py](https://github.com/HemaxiN/3D_U-Vec/blob/main/train
 
 Change the `model_path`, `save_dir`, `img_dir`, `_patch_size`, `_z_size`, `_step` parameters in file [test_main.py](https://github.com/HemaxiN/3D_U-Vec/blob/main/test_main.py), where:
 
-* `model_path`: path to the trained model.
-* `save_dir`: directory to save the images with the predicted vectors (as .tif files) and the predicted vectors (as .npy arrays).
-* `img_dir`: directory with the test images (saved as RGB .tif files).
-* `_patch_size`: patch size along x and y directions
-* `_z_size`: patch size along z direction
-* `_step`: overlap along x and y directions between consecutive patches extracted from the image
+* `model_path`: path to the trained model;
+* `save_dir`: directory to save the images with the predicted vectors (as .tif files) and the predicted vectors (as .npy arrays);
+* `img_dir`: directory with the test images (saved as RGB .tif files);
+* `_patch_size`: patch size along x and y directions;
+* `_z_size`: patch size along z direction;
+* `_step`: overlap along x and y directions between consecutive patches extracted from the image.
 
 Run the file [test_main.py](https://github.com/HemaxiN/3D_U-Vec/blob/main/test_main.py).
 
