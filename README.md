@@ -48,7 +48,7 @@ train_val_dataset
     └── outputs
 ```
 
-Thereafter, change the `_size`,`_z_size`,`data_dir`,`save_dir` and other training parameters in file [train_main.py](https://github.com/HemaxiN/3D_U-Vec/blob/main/train_main.py), where
+Thereafter, change the `_size`,`_z_size`,`data_dir`,`save_dir` and other training parameters in the file [train_main.py](https://github.com/HemaxiN/3D_U-Vec/blob/main/train_main.py), where:
 
 * `_size`: size of the microscopy image patch along x and y directions;
 * `_s_size`: size of the microscopy image patch along the z direction;
@@ -59,7 +59,7 @@ Run the file [train_main.py](https://github.com/HemaxiN/3D_U-Vec/blob/main/train
 
 ## Testing
 
-Change the `model_path`, `save_dir`, `img_dir`, `_patch_size`, `_z_size`, `_step` parameters in file [test_main.py](https://github.com/HemaxiN/3D_U-Vec/blob/main/test_main.py), where:
+Change the `model_path`, `save_dir`, `img_dir`, `_patch_size`, `_z_size`, `_step` parameters in the file [test_main.py](https://github.com/HemaxiN/3D_U-Vec/blob/main/test_main.py), where:
 
 * `model_path`: path to the trained model;
 * `save_dir`: directory to save the images with the predicted vectors (as .tif files) and the predicted vectors (as .npy arrays);
