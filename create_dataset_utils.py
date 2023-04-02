@@ -75,14 +75,10 @@ def horizontal_flip(image, vector):
     return flippedimage, flippedvec
 
 #intensity variations
-def intensity(image, vector, alpha=None):
-    if alpha==None:
-        alpha = np.random.choice(np.arange(0.75,1))
-    
-    image = image.astype('float64')
-    image = image*alpha
-    image = image.astype('float64')
-    
+def intensity(image, vector, alpha=None):    
+        image = image.astype('float64')
+        image = image*np.random.uniform(0.6,2) + np.random.uniform(-0.2,0.2)
+        image = image.astype('float64')
     return image, vector
 
 
