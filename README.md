@@ -33,7 +33,7 @@ Change the `imgs_dir`, `vecs_dir`, `save_dir_img`, `save_dir_vec`, `_xysize`, `_
 *  `save_dir_img`: directory where the processed images will be saved (after performing data augmentation as described in the paper).
 *  `save_dir_vec`: directory where the corresponding vectors are saved.
 *  `_xysize`: size of the microscopy image patch along x and y directions.
-*  `_zsize`: size of the microscopy image patch along the z direction.  
+*  `_zsize`: size of the microscopy image patch along the z direction (pre-process the image: perform zero-padding if the number of slices is smaller than 64)
 *  `maxpatches`: number of augmented patches.
 
 Run the file `create_dataset_main.py` to create the training/validation dataset. The dataset obtained with this code should have the following tree structure:
