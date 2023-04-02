@@ -23,10 +23,10 @@ training_configs = {
                 'model_file':os.path.join(save_dir, 'vectors.hdf5'),
                 'initial_learning_rate':0.001,
                 'learning_rate_drop':0.8,
-                'learning_rate_patience':50,
-                'learning_rate_epochs':50, 
-                'early_stopping_patience':None,
-                'n_epochs':200,}
+                'learning_rate_patience':10,
+                'learning_rate_epochs':None, 
+                'early_stopping_patience':20,
+                'n_epochs':200}
 
 # Generators
 train_generator = DataGenerator(data_dir, partition='train', configs=data_train_configs, data_aug_dict=None) 
@@ -34,9 +34,9 @@ validation_generator = DataGenerator(data_dir, partition='val', configs=data_val
 test_generator = DataGenerator(data_dir, partition='val', configs=data_val_test_configs, data_aug_dict=None)
 
 model = threeDUVec() #training from scratch
-#model = load_old_model(os.path.join(save_dir,'final_vectors.hdf5') #training from pre-trained model
+#model = load_old_model(os.path.join(save_dir,'best_vectors.hdf5') #training from pre-trained model
 
-train_model(model=model, logging_file= os.path.join(save_dir, "vectors.log"),
+train_model(model=model, logging_file= os.path.join(save_dir, "best_vectors.log"),
 						training_generator=train_generator,
                         validation_generator=validation_generator,
                         steps_per_epoch=train_generator.__len__(),
