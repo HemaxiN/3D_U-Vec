@@ -22,7 +22,7 @@ Our approach uses a 3D U-Net as a neural network backbone to predict the 3D vect
 
 ## Requirements
 
-Python 3.5.2, Tensorflow-GPU 1.9.0, Keras 2.2.4 and other packages listed in `requirements.txt`.
+Python 3.5.2, Tensorflow-GPU 1.9.0, Keras 2.2.4 and other packages listed in [requirements.txt](https://github.com/HemaxiN/3D_U-Vec/blob/main/requirements.txt).
 
 ## Training on your own dataset
 
@@ -48,18 +48,18 @@ train_val_dataset
     └── outputs
 ```
 
-Thereafter, change the `_size`,`_z_size`,`data_dir`,`save_dir` and other training parameters in file `train_main.py`, where
+Thereafter, change the `_size`,`_z_size`,`data_dir`,`save_dir` and other training parameters in file [train_main.py](https://github.com/HemaxiN/3D_U-Vec/blob/main/train_main.py), where
 
 * `_size`: size of the microscopy image patch along x and y directions.
 * `_s_size`: size of the microscopy image patch along the z direction.
 * `data_dir`: directory with the structure depicted above.
 * `save_dir`: directory where the models and the log file will be saved.
 
-Run the file `train_main.py` to train de model.
+Run the file [train_main.py](https://github.com/HemaxiN/3D_U-Vec/blob/main/train_main.py) to train de model.
 
 ## Testing
 
-Change the `model_path`, `save_dir`, `img_dir`, `_patch_size`, `_z_size`, `_step` parameters in file `test_main.py`, where:
+Change the `model_path`, `save_dir`, `img_dir`, `_patch_size`, `_z_size`, `_step` parameters in file [test_main.py](https://github.com/HemaxiN/3D_U-Vec/blob/main/test_main.py), where:
 
 * model_path: path to the trained model.
 * save_dir: directory to save the images with the predicted vectors (as .tif files) and the predicted vectors (as .npy arrays).
@@ -68,7 +68,7 @@ Change the `model_path`, `save_dir`, `img_dir`, `_patch_size`, `_z_size`, `_step
 * _z_size: patch size along z direction
 * _step: overlap along x and y directions between consecutive patches extracted from the image
 
-Run the file `test_main.py`.
+Run the file [test_main.py](https://github.com/HemaxiN/3D_U-Vec/blob/main/test_main.py).
 
 ## Dataset
 
