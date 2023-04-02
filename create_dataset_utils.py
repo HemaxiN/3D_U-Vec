@@ -74,7 +74,7 @@ def horizontal_flip(image, vector):
         flippedvec.append([fv0, fv1, fv2, fv3, fv4, fv5])
     return flippedimage, flippedvec
 
-#intensity variations
+#intensity variations (as done in StarDist-3D Weigert et al. (2020))
 def intensity(image, vector, alpha=None):    
         image = image.astype('float64')
         image = image*np.random.uniform(0.6,2) + np.random.uniform(-0.2,0.2)
