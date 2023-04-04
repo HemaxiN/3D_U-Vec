@@ -9,7 +9,7 @@ img_dir = r'/content/drive/My Drive/3dvectors/original_images' # directory with 
 # test parameters
 _patch_size = 256 #patch size along x and y directions
 _z_size = 64 #patch size along z direction
-_step = 128 #overlap along x and y directions between consecutive patches extracted from the image
+_step = 64 #overlap along x and y directions between consecutive patches extracted from the image
 
 
 # non-maximum suppression thresholds
