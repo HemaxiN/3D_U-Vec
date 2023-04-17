@@ -1,6 +1,7 @@
 import numpy as np
 import os
 from tifffile import imread
+import random
 from create_dataset_utils import *
 
 imgs_dir = '/mnt/2TBData/hemaxi/3dvectors/dataset3d/256_rc/train/images' #tif files, rgb images (256,256,64,3)
