@@ -5,7 +5,7 @@ _size = 256
 _z_size = 64
 data_dir = '/dev/shm/3dvectors/' #directory with the folders "train/images"
                                  #"train/outputs", "val/images", "val/outputs"
-save_dir = '/mnt/2TBData/hemaxi/3dvectors/working_colab' #directory to save
+save_dir = '/mnt/2TBData/hemaxi/3dvectors/working' #directory to save
                                                          #the models and the log file
 
 # Parameters
