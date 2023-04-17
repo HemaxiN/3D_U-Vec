@@ -40,45 +40,19 @@ def mse(y_true, y_pred, sample_weight=None):
 def mean_se(y_true, y_pred):
     [weight1, vecxgt, vecygt, veczgt] = tf.unstack(y_true, 4, axis=4)
     [vecx, vecy, vecz] = tf.unstack(y_pred, 3, axis=4)
-    vecx = tf.expand_dims(vecx, -1)
-    vecxgt = tf.expand_dims(vecxgt, -1)
-    vecy = tf.expand_dims(vecy, -1)
-    vecygt = tf.expand_dims(vecygt, -1)
-    vecz = tf.expand_dims(vecz, -1)
-    veczgt = tf.expand_dims(veczgt, -1)
-    vecx = K.flatten(vecx)
-    vecxgt = K.flatten(vecxgt)
-    vecy = K.flatten(vecy)
-    vecygt = K.flatten(vecygt)
-    vecz = K.flatten(vecz)
-    veczgt = K.flatten(veczgt)
-    epe_loss_channelx = epe_loss(vecx, vecxgt)
-    epe_loss_channely = epe_loss(vecy, vecygt)
-    epe_loss_channelz = epe_loss(vecz, veczgt)
-    return 0.33*epe_loss_channelx + 0.33*epe_loss_channely + 0.33*epe_loss_channelz
-
-def epe_loss(y_true, y_pred, weight=None):
-        output = mse(y_true, y_pred, sample_weight = None)
-        return output
-
-def epe_loss1(y_true, y_pred, weight=None):
-        output = mse(y_true, y_pred, sample_weight = weight)
-        return output
+    mse_loss_channelx = mse(vecx, vecxgt)
+    mse_loss_channely = mse(vecy, vecygt)
+    mse_loss_channelz = mse(vecz, veczgt)
+    return (1/3)*mse_loss_channelx + (1/3)*mse_loss_channely + (1/3)*mse_loss_channelz 
 
 def weighted_joint_loss_function(y_true, y_pred):
     [weight1, vecxgt, vecygt, veczgt] = tf.unstack(y_true, 4, axis=4)
     [vecx, vecy, vecz] = tf.unstack(y_pred, 3, axis=4)
-    weight1 = tf.expand_dims(weight1, -1)
-    vecx = tf.expand_dims(vecx, -1)
-    vecy = tf.expand_dims(vecy, -1)
-    vecz = tf.expand_dims(vecz, -1)
-    vecxgt = tf.expand_dims(vecxgt, -1)
-    vecygt = tf.expand_dims(vecygt, -1)
-    veczgt = tf.expand_dims(veczgt, -1)
-    mse_vectorsx = epe_loss1(vecxgt, vecx, weight1)
-    mse_vectorsy = epe_loss1(vecygt, vecy, weight1)
-    mse_vectorsz = epe_loss1(veczgt, vecz, weight1)
-    return 0.33*mse_vectorsx + 0.33*mse_vectorsy + 0.33*mse_vectorsz
+    mse_vectorsx = mse(vecxgt, vecx, weight1)
+    mse_vectorsy = mse(vecygt, vecy, weight1)
+    mse_vectorsz = mse(veczgt, vecz, weight1)
+    return (1/3)*mse_vectorsx + (1/3)*mse_vectorsy + (1/3)*mse_vectorsz +  (1e-8)*(K.sum(K.abs(vecx))+K.sum(K.abs(vecy))+K.sum(K.abs(vecz)))
+
 
 def threeDUVec(n_classes=3, im_sz=256, depth=64, n_channels=2, n_filters_start=8, growth_factor=2, upconv=True):
         droprate=0.10
