@@ -34,13 +34,13 @@ while k<maxpatches:
     final_vectors = np.zeros(np.shape(msk_aux))
     
     #data augmentation
-    if(np.random.choice([0,1])==1):
+    if random.uniform(0,1)>0.5:
         img_aux, msk_aux = vertical_flip(img_aux, msk_aux)
-    if(np.random.choice([0,1])==1):
+    if random.uniform(0,1)>0.5:
         img_aux, msk_aux = horizontal_flip(img_aux, msk_aux)
-    if(np.random.choice([0,1])==1):
+    if random.uniform(0,1)>0.5:
         img_aux, msk_aux = intensity(img_aux, msk_aux)
-    if(np.random.choice([0,1])==1):
+    if random.uniform(0,1)>0.5:
         angle = np.random.choice(np.arange(0,360,90))
         img_aux, msk_aux = rotation(img_aux, msk_aux, angle)
 
