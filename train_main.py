@@ -16,7 +16,7 @@ data_train_configs = {'dim': (_size,_size,_z_size,2),
 
 data_val_test_configs = {'dim': (_size,_size,_z_size,2),
                                                 'mask_dim':(_size,_size,_z_size,4),
-                                                'batch_size': 2,
+                                                'batch_size': 4,
                                                 'shuffle': True}
 
 training_configs = {'initial_learning_rate':0.001,
