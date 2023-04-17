@@ -173,7 +173,7 @@ def get_callbacks(model_file, logging_file, initial_learning_rate=0.0001, learni
 
 def load_old_model(model_file):
         print("Loading pre-trained model")
-        custom_objects = {'mean_se': mean_se, 'mse':mse, 'epe_loss':epe_loss, 'epe_loss1':epe_loss1, 'weighted_joint_loss_function':weighted_joint_loss_function}
+        custom_objects = {'mean_se': mean_se, 'mse':mse, 'weighted_joint_loss_function':weighted_joint_loss_function}
         try:
                 from keras_contrib.layers import InstanceNormalization
                 custom_objects["InstanceNormalization"] = InstanceNormalization
@@ -235,10 +235,8 @@ class DataGenerator(keras.utils.Sequence):
 
                 # Generate data
                 X, mask = self.__data_generation(list_IDs_temp)
-
-                if True:
-                        X, mask = self.augment(X,mask)
-                        X, mask = self.compute_weights(X,mask)    
+                X, mask = self.augment(X,mask)
+                X, mask = self.compute_weights(X,mask)    
                 return X, mask
 
         def on_epoch_end(self):
