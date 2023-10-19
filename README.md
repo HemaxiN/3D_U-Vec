@@ -70,10 +70,6 @@ Change the `model_path`, `save_dir`, `img_dir`, `_patch_size`, `_z_size`, `_step
 
 Run the file [test_main.py](https://github.com/HemaxiN/3D_U-Vec/blob/main/test_main.py).
 
-## Dataset
-
-The dataset used in our experiments is made publicly available [here](https://huggingface.co/datasets/Hemaxi/3DU-Vec/tree/main).
-
 
 ## How to cite
 ```bibtex
