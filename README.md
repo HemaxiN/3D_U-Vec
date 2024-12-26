@@ -6,7 +6,7 @@ This repository contains the Python implementation of the 3D U-Vec, a Deep Learn
 
 - Hemaxi Narotamo, Cláudio Franco, Margarida Silveira, 3D U-Vec: Prediction of Nucleus-Golgi Vectors in 3D Microscopy Images.
 
-
+If you are using this code in your research please [cite the paper](#how-to-cite).
 
 ## Architecture
 
