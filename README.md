@@ -75,7 +75,7 @@ Run the file [test_main.py](https://github.com/HemaxiN/3D_U-Vec/blob/main/test_m
 ```bibtex
 @article{narotamo20223duvec,
   title={3D U-Vec: A Deep Learning Based Approach for the Prediction of Nucleus-Golgi Vectors in 3D Microscopy Images},
-  author={Narotamo, Hemaxi and Ouarné, Marie and Franco, Cláudio and Silveira, Margarida},
+  author={Narotamo, Hemaxi and Franco, Cláudio and Silveira, Margarida},
   booktitle={},
   pages={},
   year={},
